@@ -15,6 +15,9 @@ class CreateLivresMigration extends Migration
     {
         Schema::create('livres_migration', function (Blueprint $table) {
             $table->id();
+            $table->string('document');
+            $table->string('libelle');
+            $table->string('categorie');
             $table->timestamps();
         });
     }
