@@ -13,7 +13,7 @@ class LivreController extends Controller
      */
     public function index()
     {
-        //
+        return view('livre.index');
     }
 
     /**
@@ -23,7 +23,10 @@ class LivreController extends Controller
      */
     public function create()
     {
-        //
+        $livre=new Livre();
+        return view('livre.create',[
+            'livre'=>$livre
+        ]);
     }
 
     /**
