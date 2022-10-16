@@ -3,43 +3,8 @@
 accueil | GoMyBibliotec
 @endsection
 @section('content')
-<main class="" style="text-align: center;justify-content:center;background-color:rgba(99, 99, 99, 0.616)">
-  <div class="bg-light p-5 rounded mt-3" style="background-color:rgb(240, 0, 0)">
-    <h1><font style="vertical-align: inherit;">Accede a {{$count}} livres dans notre GoMyBibliotec </font></h1>
-    <p class="lead"><font style="vertical-align: inherit;">Lire et télécharger gratuitement des livres pour vos projets de différents domaines .</font></p>
-    <br>
-    <form action="{{route('search.store')}}" method="POST">
-        @csrf
-    <div class="input-group" style="justify-content: center" >
-        <select name="categorie" id="categorie" class="form-select" style="border-radius:5% 5% 5% 5% ;height:40px;background-color:rgb(248, 16, 16);outline:none;color:rgb(248, 248, 248)">
-            @foreach ($categories as $cat1)
-            <option value="{{$cat1->id}}">{{$cat1->libelle}}</option>
-            @endforeach
-
-        </select>
-
-        <div class="form-outline" >
-          <input type="search" id="form1" name="libelle" class="form-control"  style="background-color:rgb(218, 12, 12);height:40px;" />
-          <label class="form-label" for="form1">Search</label>
-        </div>
-        <button type="submit" class="btn btn-outline-danger">
-          <i class="fas fa-search"></i>
-        </button>
-      </div>
-    </form>
-
-</main>
-<br>
-<br>
-<div class="container" style="background-color: #ffffff">
-<!--Grid row-->
-<div>
-    <span>Resultats Search</span>
-</div>
-<br>
 <div class="row">
     @foreach($livres as $liv)
-
 
     <div class="col-sm-3"  style="border-color: rgb(43, 30, 12)" >
       <div class="card" style="">

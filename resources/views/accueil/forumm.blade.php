@@ -1,6 +1,6 @@
-@extends('layouts.app')
-@section('title')
-Categorie | formation
+@extends('nav.user')
+@section('titre')
+accueil | GoMyBibliotec
 @endsection
 @section('content')
 <main class="container">

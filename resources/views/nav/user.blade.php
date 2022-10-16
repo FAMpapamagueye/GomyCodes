@@ -53,15 +53,15 @@
         />
       </a>
       <!-- Left links -->
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="justify-content: flex-start">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Accueil</a>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="outline:none">
+        <li class="nav-item" style="color: none">
+          <a class="nav-link" style="color: black" href="{{route('accueil.index')}}">Accueil</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Forum</a>
+          <a class="nav-link" style="color: black" href="{{route('forumm')}}">Forum</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Livres</a>
+            <a class="nav-link" style="color: black" href="{{route('listeLivre.index')}}">Livres</a>
           </li>
 
       </ul>
@@ -84,7 +84,7 @@
   <!-- Container wrapper -->
 </nav>
 <!-- Navbar -->
-<section style="background-color:rgba(51, 49, 49, 0.685);height:100vh">
+<section style="background-color:rgb(253, 249, 249);height:100vh">
   @yield('content')
 </section>
  {{-- <script src="{{ asset('/js/app.js') }}"></script> --}}

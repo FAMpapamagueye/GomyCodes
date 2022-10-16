@@ -18,12 +18,10 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-// Route::get('/dashboard', function () {
-//     $categories=categories::all();
-//         return view('accueil.accueil',[
-//             'categories'=>$categories
-//         ]);
-// })->middleware(['auth'])->name('dashboard');
+Route::get('/forumm', function () {
+
+        return view('accueil.forumm');
+})->middleware(['auth'])->name('forumm');
 Route::resource('/admin',App\Http\Controllers\AdminController::class);
 Route::resource('/livres',App\Http\Controllers\LivreController::class);
 Route::resource('/categorie',App\Http\Controllers\CategorieController::class);
@@ -32,5 +30,6 @@ Route::resource('/search',App\Http\Controllers\rechercherController::class);
 Route::get('storage/{livre}',[App\Http\Controllers\fileController::class,'download'])->name('storage');
 Route::get('lire/{id}',[App\Http\Controllers\fileController::class,'view'])->name('lire');
 Route::resource('accueil', App\Http\Controllers\accueilController::class);
+Route::resource('listeLivre', App\Http\Controllers\listeController::class);
 
 require __DIR__.'/auth.php';
