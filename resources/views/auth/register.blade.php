@@ -14,15 +14,22 @@
 
             <!-- Name -->
             <div>
-                <x-label for="name" :value="__('Name')" />
+                <x-label for="username" :value="__('username')" />
 
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('username')" required autofocus />
+                <x-input id="username" class="block mt-1 w-full" type="text" name="username" :value="old('username')" required autofocus />
             </div>
             <div>
-                <x-label for="name" :value="__('Telephone')" />
+                <x-label for="telephone" :value="__('Telephone')" />
 
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('telephone')" required autofocus />
+                <x-input id="telephone" class="block mt-1 w-full" type="text" name="telephone" :value="old('telephone')" required autofocus />
             </div>
+            @if ($User["profil"]== "admin")
+            <div>
+                <x-label for="profil" :value="__('profil')" />
+
+                <x-input id="telephone" class="block mt-1 w-full" type="text" name="profil" :value="old('profil')" required autofocus />
+            </div>
+            @endif
             <!-- Email Address -->
             <div class="mt-4">
                 <x-label for="email" :value="__('Email')" />

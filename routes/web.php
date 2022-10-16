@@ -15,12 +15,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('accueil.accueil');
 })->middleware(['auth'])->name('dashboard');
+Route::resource('/user',App\Http\Controllers\userController::class);
 Route::resource('/livres',App\Http\Controllers\LivreController::class);
 Route::resource('/categorie',App\Http\Controllers\CategorieController::class);
 Route::resource('/forum',App\Http\Controllers\ForumController::class);

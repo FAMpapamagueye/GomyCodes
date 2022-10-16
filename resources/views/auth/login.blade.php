@@ -37,7 +37,7 @@
 		<!--begin::Main-->
 		<div class="d-flex flex-column flex-root" style="
         margin-left:200px;
-            margin-right:260px;
+            margin-right:193px;
         background-color:#f0f1f2">
 			<!--begin::Login-->
 			<div class="login login-2 login-signin-on d-flex flex-column flex-lg-row flex-column-fluid " style="
@@ -53,10 +53,10 @@
 						<!--begin::Aside body-->
 						<div class="d-flex flex-column-fluid flex-column flex-center">
 							<!--begin::Signin-->
-							<div class="login-form login-signin py-11">
+							<div class="login-form login-signin py-11" style="float:left">
 								<!--begin::Form-->
 								<!--begin::Title-->
-								<div class="text-center pb-8">
+								<div class="text-center pb-8" >
                                     <a href="#" class="">
                                         <img src="{{ asset('7.png') }}" class="images"   style="height:150px;width:300px" alt="" />
                                         {{-- <span class="">GoMyCodes</span> --}}
@@ -113,7 +113,7 @@
 
 					<!--begin::Image-->
 					<div class="content-img" >
-                    <img src="122.png" style="padding:40%;float:left"  alt="test"/>
+                    <img src="122.png" style="padding:40%;float:right;height:100%" alt="test"/>
                     </div>
 					<!--end::Image-->
 				</div>
