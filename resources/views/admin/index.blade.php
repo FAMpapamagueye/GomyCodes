@@ -1,13 +1,13 @@
 <section class="content">
     @extends('layouts.app')
     @section('title')
-    Stages
+ Admin |dashborad
     @endsection
     @section('content')
     <section class="content">
        <!-- Button trigger modal -->
 <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
-    Ajouter un nouveau Etudiants
+    Add User
   </button>
 <div class="container">
     <table class="table">
@@ -42,7 +42,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Add Etudiants</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Add Users</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -53,11 +53,11 @@
             @csrf
               <div class="form-group">
                   <label for="nom">nom</label>
-                  <input class="input-md textinput textInput form-control" type="text" name="nom" required>
+                  <input class="input-md textinput textInput form-control" type="text" name="username" required>
               </div>
               <div class="form-group">
                 <label for="prenom">prenom</label>
-                <input class="input-md textinput textInput form-control" type="text" name="prenom" required>
+                <input class="input-md textinput textInput form-control" type="text" name="profil" required>
             </div>
             <div class="form-group">
                 <label for="prenom">Email</label>

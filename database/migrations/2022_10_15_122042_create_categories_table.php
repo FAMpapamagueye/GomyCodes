@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateForumMigration extends Migration
+class CreateCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,11 @@ class CreateForumMigration extends Migration
      */
     public function up()
     {
-        Schema::create('forum_migration', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->id();
+            $table->string('libelle');
+            $table->string('logo');
+            $table->string('description');
             $table->timestamps();
         });
     }
@@ -26,6 +29,6 @@ class CreateForumMigration extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('forum_migration');
+        Schema::dropIfExists('categories_migration');
     }
 }

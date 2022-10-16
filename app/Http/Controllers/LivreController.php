@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+// use App\Http\Controllers\Livres;
+use \App\Models\{Livres,categories};
 
 class LivreController extends Controller
 {
@@ -13,7 +15,12 @@ class LivreController extends Controller
      */
     public function index()
     {
-        return view('livre.index');
+        $livre=Livres::All();
+        $categories=categories::all();
+        return view('livre.index',[
+            'livre'=>$livre,
+            'categories'=>$categories
+        ]);
     }
 
     /**
@@ -37,7 +44,19 @@ class LivreController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $livres=new Livres();
+        $fil=$request->document;
+
+        $extension=$fil->getClientOriginalExtension();
+
+        $filname=time().'.'.$extension;
+        // dd($filname);
+        $fil->storeAs('doc',$filname,'public');
+        $livres->libelle=$request->libelle;
+        $livres->categorie=$request->categorie;
+        $livres->document=$filname;
+        $livres->save();
+        return redirect()->back();
     }
 
     /**
@@ -48,7 +67,10 @@ class LivreController extends Controller
      */
     public function show($id)
     {
-        //
+        $livres=Livres::find($id);
+        return view('file.file',[
+            'livres'=>$livres
+        ]);
     }
 
     /**

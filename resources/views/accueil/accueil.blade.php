@@ -10,7 +10,10 @@ accueil | GoMyBibliotec
     <br>
     <div class="input-group" style="justify-content: center" >
         <select name="categorie" id="categorie"  style="border-radius:5% 5% 5% 5% ;height:40px;background-color:gray;outline:none;color:rgb(248, 248, 248)">
-            <option value="1">1</option>
+            @foreach ($categories as $cat1)
+            <option value="{{$cat1->id}}">{{$cat1->libelle}}</option>
+            @endforeach
+
         </select>
 
         <div class="form-outline" >
@@ -32,12 +35,13 @@ accueil | GoMyBibliotec
 </div>
 <br>
 <div class="row">
+@foreach ($categories as $cat)
 
-    <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+    <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
       <!-- Image with no mask -->
       <div class="bg-image rounded-6">
         <img
-          src="https://mdbootstrap.com/img/new/ecommerce/vertical/010.jpg"
+          src="storage/img/{{$cat->logo}}"
           class="w-100"
           alt="Alternative text"
         />
@@ -54,14 +58,15 @@ accueil | GoMyBibliotec
             "
           >
             <div>
-              <h2 class="fw-bold text-white mb-4">Can you see me?</h2>
-              <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magni voluptate quibusdam, nisi nobis sunt repudiandae dolorem numquam sapiente, sint adipisci asperiores vero doloremque aperiam tenetur, neque minima vitae temporibus.</span>
+              <h2 class="fw-bold text-white mb-4">{{$cat->libelle}}</h2>
+              <span style="color: white">{{$cat->description}}</span>
             </div>
           </div>
         </div>
       </div>
     </div>
-
+ @endforeach
+{{--
     <div class="col-lg-4 mb-4 mb-lg-0">
       <!-- Image with black mask -->
       <div class="bg-image rounded-6">
@@ -134,7 +139,7 @@ accueil | GoMyBibliotec
           </div>
         </div>
       </div>
-    </div>
+    </div> --}}
   </div>
   <!--Grid row-->
 

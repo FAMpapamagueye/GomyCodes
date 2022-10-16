@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLivresMigration extends Migration
+class CreateLivresTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateLivresMigration extends Migration
      */
     public function up()
     {
-        Schema::create('livres_migration', function (Blueprint $table) {
+        Schema::create('livres', function (Blueprint $table) {
             $table->id();
-            $table->string('document');
             $table->string('libelle');
+            $table->string('document');
             $table->string('categorie');
             $table->timestamps();
         });

@@ -19,11 +19,17 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('accueil.accueil');
+    $categories=categories::all();
+        return view('accueil.accueil',[
+            'categories'=>$categories
+        ]);
 })->middleware(['auth'])->name('dashboard');
-Route::resource('/user',App\Http\Controllers\userController::class);
+Route::resource('/admin',App\Http\Controllers\AdminController::class);
 Route::resource('/livres',App\Http\Controllers\LivreController::class);
 Route::resource('/categorie',App\Http\Controllers\CategorieController::class);
 Route::resource('/forum',App\Http\Controllers\ForumController::class);
+Route::get('storage/{livre}',[App\Http\Controllers\fileController::class,'download'])->name('storage');
+Route::get('lire/{id}',[App\Http\Controllers\fileController::class,'view'])->name('lire');
+Route::resource('accueil', App\Http\Controllers\accueilController::class);
 
 require __DIR__.'/auth.php';

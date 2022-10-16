@@ -5,16 +5,16 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="" class="nav-link">Accueil</a>
+        <a href="{{route('admin.index')}}" class="nav-link">Accueil</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">livre</a>
+        <a href="{{route('livres.index')}}" class="nav-link">livre</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Categorie</a>
+        <a href="{{route('categorie.index')}}" class="nav-link">Categorie</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">forum</a>
+        <a href="{{route('forum.index')}}" class="nav-link">forum</a>
       </li>
     </ul>
 

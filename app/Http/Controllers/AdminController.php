@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use \App\Models\categories ;
-use Illuminate\Support\Facades\Storage;
-class CategorieController extends Controller
+use App\Models\User;
+class AdminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,10 +13,9 @@ class CategorieController extends Controller
      */
     public function index()
     {
-        $categories=categories::all();
-        // dd($categories);
-        return view('categorie.index',[
-            'categories'=>$categories
+        $User=User::All();
+        return view('admin.index',[
+            'User'=>$User
         ]);
     }
 
@@ -28,7 +26,10 @@ class CategorieController extends Controller
      */
     public function create()
     {
-        //
+        $User=new User();
+        return view('auth.register',[
+            'User'=>$User
+        ]);
     }
 
     /**
@@ -39,27 +40,7 @@ class CategorieController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'libelle' =>'required',
-            'logo' => 'required',
-            'description' => 'required',
-        ]);
-            $categories=new categories();
-             $fil=$request->logo;
-             $extension = $fil->getClientOriginalExtension();
-
-            $filname=time().'.'.$extension;
-            // dd($extension);
-            $fil->storeAs('img',
-            $filname,
-            'public');
-
-            $categories->libelle=$request->libelle;
-            $categories->description=$request->description;
-            $categories->logo=$filname;
-            $categories->save();
-            return redirect()->back();
-
+        //
     }
 
     /**
@@ -70,10 +51,7 @@ class CategorieController extends Controller
      */
     public function show($id)
     {
-        $livres=Livres::find($id);
-        return view('file.file',[
-            'livres'=>$livres
-        ]);
+        //
     }
 
     /**

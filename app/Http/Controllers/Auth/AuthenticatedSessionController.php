@@ -32,7 +32,7 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
         if(Auth::user()->profil=="apprenants" ||Auth::user()->profil=="formateur"){
-        return redirect('/dashboard');
+        return redirect('/accueil');
         }
         if(Auth::user()->profil=="admin")
         return redirect('/admin');
