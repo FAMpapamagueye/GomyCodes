@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\{categories,Livres};
-class accueilController extends Controller
+use App\Models\{Livres,categories};
+class rechercherController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,12 +13,7 @@ class accueilController extends Controller
      */
     public function index()
     {
-        $categories=categories::all();
-        $count=Livres::all()->count();
-        return view('accueil.accueil',[
-            'categories'=>$categories,
-            'count'=>$count
-        ]);
+        //
     }
 
     /**
@@ -39,7 +34,18 @@ class accueilController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $key =trim($request->libelle);
+        $categories=categories::all();
+        $count=Livres::all()->count();
+
+        $livres= Livres::where('libelle','like','%'.$key.'%')
+        ->where('categorie', '=', $request->categorie)->get();
+        // return $search;
+        return view('resultat.rasultat',[
+            'categories'=>$categories,
+            'livres'=>$livres,
+            'count'=>$count
+        ]);
     }
 
     /**

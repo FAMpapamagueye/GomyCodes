@@ -5,9 +5,11 @@ accueil | GoMyBibliotec
 @section('content')
 <main class="" style="text-align: center;justify-content:center;background-color:rgba(99, 99, 99, 0.616)">
   <div class="bg-light p-5 rounded mt-3" style="background-color:rgb(240, 0, 0)">
-    <h1><font style="vertical-align: inherit;">Accede a +10000 livres dans notre GoMyBibliotec </font></h1>
+    <h1><font style="vertical-align: inherit;">Accede a {{$count}} livres dans notre GoMyBibliotec </font></h1>
     <p class="lead"><font style="vertical-align: inherit;">Lire et télécharger gratuitement des livres pour vos projets de différents domaines .</font></p>
     <br>
+    <form action="{{route('search.store')}}" method="POST">
+        @csrf
     <div class="input-group" style="justify-content: center" >
         <select name="categorie" id="categorie"  style="border-radius:5% 5% 5% 5% ;height:40px;background-color:gray;outline:none;color:rgb(248, 248, 248)">
             @foreach ($categories as $cat1)
@@ -17,13 +19,14 @@ accueil | GoMyBibliotec
         </select>
 
         <div class="form-outline" >
-          <input type="search" id="form1" class="form-control"  style="background-color:gray;height:40px;" />
+          <input type="search" id="form1" name="libelle" class="form-control"  style="background-color:gray;height:40px;" />
           <label class="form-label" for="form1">Search</label>
         </div>
-        <button type="button" class="btn btn-outline-danger">
+        <button type="submit" class="btn btn-outline-danger">
           <i class="fas fa-search"></i>
         </button>
       </div>
+    </form>
 
 </main>
 <br>

@@ -6,9 +6,9 @@
     @section('content')
     <section class="content">
        <!-- Button trigger modal -->
-<button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
+{{-- <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
     Add User
-  </button>
+  </button> --}}
 <div class="container">
     <table class="table">
         <thead>
